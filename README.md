@@ -6,4 +6,4 @@ As such, please always take care and be aware that this code is produced by an a
 
 Thanks!
 
-Jack
+jackgale.eth
