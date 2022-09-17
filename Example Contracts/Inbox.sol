@@ -1,4 +1,6 @@
-pragma solidity ^0.4.17;
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.7.0 <0.9.0;
 
 contract Inbox {
     string public message; //automatically stored with the contract on chain. local variables are stored in the contract but not on chain
