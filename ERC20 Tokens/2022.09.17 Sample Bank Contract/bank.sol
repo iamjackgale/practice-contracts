@@ -9,34 +9,40 @@ import "@openzeppelin/contracts/utils/Context.sol";
 /**
  * @title bank.sol
  * @author jackgale.eth
- * @dev Create a simple ERC20 standard vault for ether, and a token that is exchanged for Ether deposited in the contract 1:1
+ * @dev Create a simple ERC20 standard token that is exchanged for Ether deposited in the contract 1:1
  */
 contract Bank is ERC20, ERC20Burnable {
-    mapping(address => uint256) public balances;
-
     constructor(string memory tokenName, string memory tokenSymbol)
         ERC20("Ether Deposit Token", "EDT")
     {}
 
     function deposit() public payable {
-        balances[msg.sender] += msg.value;
         _mint(msg.sender, msg.value);
     }
 
     function withdraw(uint256 _amount) public payable {
-        require(balances[msg.sender] >= _amount, "Insufficient funds.");
-        balances[msg.sender] -= _amount;
+        require(
+            _amount > 0,
+            "You must state a value to transfer greater than zero."
+        );
+        require(
+            balanceOf(msg.sender) > 0,
+            "You must have funds deposited to withdraw."
+        );
+        require(balanceOf(msg.sender) >= _amount, "Insufficient funds.");
+        burn(_amount);
         (bool sent, ) = msg.sender.call{value: _amount}("sent");
         require(sent, "Failed to Complete");
     }
 
     function withdrawAll() public payable {
-        balances[msg.sender] -= balances[msg.sender];
-        (bool sent, ) = msg.sender.call{value: balances[msg.sender]}("sent");
+        require(
+            balanceOf(msg.sender) > 0,
+            "You must have funds deposited to withdraw."
+        );
+        uint256 _amount = balanceOf(msg.sender);
+        burn(_amount);
+        (bool sent, ) = msg.sender.call{value: _amount}("sent");
         require(sent, "Failed to Complete");
-    }
-
-    function getBal() public view returns (uint256) {
-        return (address(this).balance);
     }
 }
