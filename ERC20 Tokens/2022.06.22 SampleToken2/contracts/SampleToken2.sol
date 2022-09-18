@@ -64,8 +64,8 @@ contract SampleToken2 is
         _mint(to, amount); //if so, mint
 
         //update netMintBurn calculation in light of mint
-        tokenSupply = tokenSupply + amount;
-        netMintBurn = netMintBurn + amount;
+        tokenSupply += amount;
+        netMintBurn += amount;
 
         //set status depending on impact of mint
         if (netMintBurn > 0) {
