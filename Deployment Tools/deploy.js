@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0
 // @title deploy.js
 // @author jackgale.eth
 // @dev Basic deployment of a single compiled smart contract using a single wallet and RPC.
