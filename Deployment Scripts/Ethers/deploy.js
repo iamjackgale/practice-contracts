@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 // @title deploy.js
 // @author jackgale.eth
-// @dev Basic deployment of a single compiled smart contract using a single wallet and RPC.
+// @dev Basic deployment of a single compiled smart contract using a single wallet and RPC and ethers.js.
 // Adapted from FreeCodeCamp Solidity & Javascript Blockchain Course:
 // @source See: https://github.com/PatrickAlphaC/ethers-simple-storage-fcc/blob/00cf598a7532a11e09138a341cf0789802ebe4c3/deploy.js
 
