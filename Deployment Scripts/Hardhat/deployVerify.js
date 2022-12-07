@@ -1,27 +1,26 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 // @title deployVerify.js
 // @author jackgale.eth
 // @dev Basic deployment of a single compiled smart contract using a single wallet and RPC and Hardhat, followed by verification of that contract on Etherscan.
 // Adapted from FreeCodeCamp Solidity & Javascript Blockchain Course:
 // @source See: https://github.com/PatrickAlphaC/hardhat-simple-storage-fcc/blob/main/scripts/deploy.js
 
-const ethers = require("ethers");
 const fs = require("fs-extra");
-require("dotenv").config(); // Assumes .env for RPC_URL, PRIVATE_KEY and ETHERSCAN_API_KEY.
+require("dotenv").config(); //Assumes .env for RPC_URL, PRIVATE_KEY and API_KEY.
 
 async function main() {
   // Deploy contract.
-  const contractFactory = await ethers.getContractFactory(""); // Insert contract name as stated in .sol file.
+  const contractFactory = await ethers.getContractFactory(""); // Set contract name from within .sol file.
   console.log("Deploying contract...");
   const contract = await contractFactory.deploy();
   await contract.deployed();
   console.log("Deployed contract to: " + contract.address);
 
   // Verify contract.
-  if (network.config.chainId == "" && process.env.ETHERSCAN_API_KEY) {
-    // Insert relevant chainId.
+  if (network.config.chainId == chainId && process.env.API_KEY) {
+    // Insert relevant chainId and API_KEY.
     await contract.deployTransaction.wait(6);
-    await verify(contract.address, []);
+    await verify(contract.address, []); // Insert contract arguments from within .sol file. Default is [].
   }
 }
 
