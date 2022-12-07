@@ -20,8 +20,8 @@ async function main() {
   // Verify contract.
   if (network.config.chainId == "" && process.env.ETHERSCAN_API_KEY) {
     // Insert relevant chainId.
-    await simpleStorage.deployTransaction.wait(6);
-    await verify(simpleStorage.address, []);
+    await contract.deployTransaction.wait(6);
+    await verify(contract.address, []);
   }
 }
 
