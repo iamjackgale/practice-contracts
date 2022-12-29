@@ -16,7 +16,7 @@ contract TestNFTFactory is ERC721URIStorage, Ownable {
 
     event TestNFTDeployed(uint256 indexed tokenId, string tokenURI);
 
-    constructor() ERC721("jackgale.eth's Test NFTs", "tNFT") {}
+    constructor() ERC721("jackgale.eth Test NFTs", "tNFT") {}
 
     function mint(string memory _tokenURI) public onlyOwner returns (uint256) {
         uint256 newItemId = _tokenIds.current();
