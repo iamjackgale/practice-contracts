@@ -10,10 +10,10 @@ require("dotenv").config();
 
 const GOERLI_RPC_KEY = process.env.GOERLI_RPC_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
+const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS; // Ensure correct contract(s) specified in .env
 
 // Contract Local ABI
-const contract = require("../artifacts/contracts/BankEarnVault.sol/BankEarnVault.json");
+const contract = require("../artifacts/contracts/XXX.sol/XXX.json"); // Add contract directory and contract json
 
 // Provider
 const alchemyProvider = new ethers.providers.AlchemyProvider(
@@ -25,12 +25,16 @@ const alchemyProvider = new ethers.providers.AlchemyProvider(
 const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
 
 // Contract
-const contract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer);
+const bankEarnVaultContract = new ethers.Contract(
+  CONTRACT_ADDRESS,
+  contract.abi,
+  signer
+);
 
 // Operative Function
 
 async function main() {
-  // Operations
+  // Insert operative code
 }
 
 main();
