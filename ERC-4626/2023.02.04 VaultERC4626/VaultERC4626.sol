@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-// @title vault.sol
+// @title VaultERC4626.sol
 // @author jackgale.eth
 
 // @dev template ERC-4626 vault contract, adapted from OpenZeppelin's ERC-4626 for ERC-20 assets only.
@@ -15,7 +15,7 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/interfaces/IERC4626.sol";
 import "@openzeppelin/contracts/utils/math/Math.sol";
 
-contract Vault is ERC20, IERC4626 {
+contract VaultERC4626 is ERC20, IERC4626 {
     
     // >>> LIBRARIES <<<
     using Math for uint256;

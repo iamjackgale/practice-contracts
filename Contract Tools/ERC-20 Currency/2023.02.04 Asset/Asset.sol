@@ -9,7 +9,7 @@ pragma solidity >=0.7.0 <0.9.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./IAsset.sol";
 
-contract Currency is ERC20, IAsset {
+contract Asset is ERC20, IAsset {
     address _deployer;
 
     constructor() ERC20("Currency Token", "$$$") {

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-// @title iAsset.sol
+// @title IAsset.sol
 // @author jackgale.eth
 // @dev interface for sample asset to allow external minting.
 
