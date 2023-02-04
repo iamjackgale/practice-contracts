@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-// @title NFTFactory1.sol
+// @title FactoryERC721.sol
 // @author jackgale.eth
 // @dev ERC-721 NFT factory for generating NFTs with a specified URI, including burn methods.
 
@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NFTFactory1 is ERC721URIStorage, ERC721Burnable, Ownable {
+contract FactoryERC721 is ERC721URIStorage, ERC721Burnable, Ownable {
     using Strings for uint256;
     using Counters for Counters.Counter;
 
