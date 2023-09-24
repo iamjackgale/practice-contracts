@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 const { expect } = require("chai");
 
-describe("TestTest", function () {
+describe("WETHHandlerTest", function () {
 
     let receiver, sender, contract
 
@@ -9,7 +9,7 @@ describe("TestTest", function () {
         [ receiver, sender ] = await ethers.getSigners();
         const wethFactory = await ethers.getContractFactory("WETH");
         weth = await wethFactory.deploy();
-        const contractFactory = await ethers.getContractFactory("Test");
+        const contractFactory = await ethers.getContractFactory("WETHHandler");
         contract = await contractFactory.deploy(weth);
     })
 
@@ -64,4 +64,4 @@ describe("TestTest", function () {
     })
 })
 
-// yarn hardhat test test/test-test.js
+// yarn hardhat test test/WETHHandler-test.js
