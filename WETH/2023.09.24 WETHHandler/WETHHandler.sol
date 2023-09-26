@@ -3,7 +3,7 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "./IWETH.sol";
+import "WETH/IWETH.sol";
 
 contract WETHHandler {
 
