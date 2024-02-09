@@ -27,28 +27,28 @@ module.exports = {
     goerli: {
       chainId: 5,
       url: process.env.GOERLI_RPC_URL,
-      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2],
+      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2, process.env.PRIVATE_KEY_3],
       gas: "auto",
       gasPrice: "auto"
     },
     sepolia: {
       chainId: 11155111,
       url: process.env.SEPOLIA_RPC_URL,
-      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2],
+      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2, process.env.PRIVATE_KEY_3],
       gas: "auto",
       gasPrice: "auto"
     },
     gnosis: {
       chainId: 100,
       url: process.env.GNOSIS_RPC_URL,
-      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2],
+      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2, process.env.PRIVATE_KEY_3],
       gas: "auto",
       gasPrice: "auto"
     },
     fantom: {
       chainId: 250,
       url: process.env.FANTOM_RPC_URL,
-      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2],
+      accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2, process.env.PRIVATE_KEY_3],
       gas: "auto",
       gasPrice: "auto"
     }
