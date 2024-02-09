@@ -2,8 +2,8 @@
 
 pragma solidity ^0.8.0;
 
-import "WETH/IWETH.sol";
-import "ERC-4626/IERC4626.sol";
+import "contracts/WETH/IWETH.sol";
+import "contracts/ERC-4626/IERC4626.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -13,7 +13,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * @notice Contract to facilitate dispersals of gas among treasury signers directly from the treasury Safe, including native token and wrapped token (with approval, or without approval by transfer and then disperseResidue()). 
  */
 
-contract GnosisTreasuryDisperse is Ownable {
+abstract contract GnosisTreasuryDisperse is Ownable {
 
     IWETH wnative;
     IERC20 wnative20;
