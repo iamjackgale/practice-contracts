@@ -3,8 +3,8 @@ const { ethers } = require("hardhat");
 const { BigNumber } = require("bignumber.js")
 require("dotenv").config(); //Assumes .env for RPC_URL, PRIVATE_KEY and API_KEY.
 
-const PRIVATE_KEY_1 = process.env.PRIVATE_KEY_1;
-const PRIVATE_KEY_2 = process.env.PRIVATE_KEY_2;
+const PRIVATE_KEY_2 = process.env.PRIVATE_KEY_1;
+const PRIVATE_KEY_1 = process.env.PRIVATE_KEY_2;
 const PRIVATE_KEY_3 = process.env.PRIVATE_KEY_3;
 const SEPOLIA_RPC_KEY = process.env.SEPOLIA_RPC_KEY;
 

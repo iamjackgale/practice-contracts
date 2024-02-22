@@ -36,7 +36,7 @@ module.exports = {
       url: process.env.SEPOLIA_RPC_URL,
       accounts: [process.env.PRIVATE_KEY_1, process.env.PRIVATE_KEY_2, process.env.PRIVATE_KEY_3],
       gas: "auto",
-      gasPrice: "auto"
+      gasPrice: 30000000000
     },
     gnosis: {
       chainId: 100,
@@ -54,9 +54,10 @@ module.exports = {
     }
   },
   etherscan: {
-    apiKey: process.env.GNOSISSCAN_API_KEY,//process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.ETHERSCAN_API_KEY,//process.env.ETHERSCAN_API_KEY,
     additionalNetworks: {
-      fantom: process.env.GNOSISSCAN_API_KEY,
+      gnosis: process.env.GNOSISSCAN_API_KEY,
+      fantom: process.env.FANTOMSCAN_API_KEY,
     }
   },
 };

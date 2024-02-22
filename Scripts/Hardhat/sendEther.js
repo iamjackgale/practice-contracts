@@ -3,7 +3,7 @@ const { ethers } = require("hardhat");
 require("dotenv").config(); //Assumes .env for RPC_URL, PRIVATE_KEY and API_KEY.
 
 const PRIVATE_KEY_1 = process.env.PRIVATE_KEY_1;
-const PRIVATE_KEY_2 = process.env.PRIVATE_KEY_2;
+const PRIVATE_KEY_2 = process.env.PRIVATE_KEY_;
 const SEPOLIA_RPC_KEY = process.env.SEPOLIA_RPC_KEY;
 
 const alchemyProvider = new ethers.AlchemyProvider(
@@ -16,6 +16,8 @@ const signer = signerWallet.connect(alchemyProvider);
 const receiverWallet = new ethers.Wallet(PRIVATE_KEY_2, alchemyProvider);
 const receiver = receiverWallet.connect(alchemyProvider);
 
+const amount = 0.10050961054018807
+
 const wait = (n) => new Promise((resolve) => setTimeout(resolve, n));
 var waitTime = 0
 
@@ -27,7 +29,7 @@ async function main() {
     const tx = {
         from: signerWallet.address,
         to: receiverWallet.address,
-        value: ethers.parseEther("0.0009")
+        value: ethers.parseEther(amount.toString())
     }
     await signer.sendTransaction(tx).then((transaction) => {
         console.dir(transaction.hash)

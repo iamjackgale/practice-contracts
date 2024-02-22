@@ -2,8 +2,8 @@ require("dotenv").config(); //Assumes .env for RPC_URL, PRIVATE_KEY and API_KEY.
 
 async function main() {
   // Verify contract.
-  if (network.config.chainId == 1 && process.env.ETHERSCAN_API_KEY) { // Insert relevant chainId and API_KEY.
-    await verify(deployedAddress, [arguments]); // Insert contract arguments from within .sol file. Default is [].
+  if (network.config.chainId == 11155111 && process.env.ETHERSCAN_API_KEY) { // Insert relevant chainId and API_KEY.
+    await verify("0xE2C89CE311AD7466A6D527A30d8aDb1258002D66", []); // Insert contract arguments from within .sol file. Default is [].
   }
 }
 
@@ -30,4 +30,4 @@ main()
     process.exit(1);
   });
 
-// yarn hardhat run scripts/verify.js --network fantom
+// yarn hardhat run scripts/hardhat/verify.js --network sepolia
